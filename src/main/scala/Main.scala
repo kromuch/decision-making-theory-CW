@@ -14,12 +14,17 @@ object Main {
     val inputData = InputData.getInputData(new File("input/master/"), currentAge, n)
     val preTable = PreTable.generatePreTable(inputData, currentAge, n)
 
+    println("==========Етап умовної оптимізації==========\n")
     preTable.toList.sortBy(-_._1).foreach { case (move, map) =>
       println(s"Крок: $move")
         map.toList.sortBy(_._1).foreach { case (age, cell) =>
             println(s"$age\t$cell")
         }
     }
+
+    println("\n\n\n==========Етап безумовної оптимізації==========\n")
+
+    Solver.solve(preTable, 3, 1, n)
 
 
   }

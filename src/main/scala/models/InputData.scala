@@ -24,7 +24,7 @@ object InputData {
 
   case class InputDataCC(current: YoITable, other: Map[YoI, YoITable])
 
-  def getInputData(folder: File, currentAge: Int, n: Int): InputDataCC = {
+  def getInputData(folder: File, currentAge: Age, n: Int): InputDataCC = {
     val yoiOfCurrent = 1 - currentAge
     val table = getListOfFiles(folder).map { file =>
       val yoi: YoI = file.getName.dropRight(4).toInt
