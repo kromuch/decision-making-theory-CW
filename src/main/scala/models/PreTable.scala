@@ -10,7 +10,9 @@ object PreTable {
     * @param x - міняємо - true, не міняємо - false
     * @param W - прибуток обраного рішення від моменту його прийняття до кінця періоду, що розглядається
     */
-  case class PreTableCell(x: Boolean, W: Int, wOther: Int)
+  case class PreTableCell(x: Boolean, W: Int, wOther: Int) {
+    override def toString: String = s"Замінюємо: ${if (x) "так" else "ні"}, обраний дохід: $W, альтернативний дохід: $wOther"
+  }
 
   type PreTableT = Map[Move, Map[Age, PreTableCell]]
 

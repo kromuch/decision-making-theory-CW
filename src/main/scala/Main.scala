@@ -15,8 +15,8 @@ object Main {
     val preTable = PreTable.generatePreTable(inputData, currentAge, n)
 
     preTable.toList.sortBy(-_._1).foreach { case (move, map) =>
-      println(s"Move: $move")
-        map.toList.sortBy(_._1).foreach{ case (age, cell) =>
+      println(s"Крок: $move")
+        map.toList.sortBy(_._1).foreach { case (age, cell) =>
             println(s"$age\t$cell")
         }
     }
