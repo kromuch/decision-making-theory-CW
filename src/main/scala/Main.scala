@@ -24,8 +24,7 @@ object Main {
 
     println("\n\n\n==========Етап безумовної оптимізації==========\n")
 
-    Solver.solve(preTable, 3, 1, n)
-
+    Solver.solve(preTable, 3, 1, n, 0)
 
   }
 }
